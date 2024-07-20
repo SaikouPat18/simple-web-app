@@ -4,9 +4,9 @@
 A simple website with authentication built using ReactJS and TailwindCSS.
 
 ## Installation
-1. Clone the repository:
+# Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone <https://github.com/pacificped/simple-web-app.git>
    cd simple-web-app
 
 # Getting Started with Create React App
