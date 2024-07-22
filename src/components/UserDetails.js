@@ -7,8 +7,8 @@ import { successToast } from '../services/toastService';
 const UserDetails = () => {
   const [userDetails, setUserDetails] = useState(null);
   const [loading, setLoading] = useState(false);
-  const navigate  = useNavigate();
-  
+  const navigate = useNavigate();
+
 
 
   useEffect(() => {
@@ -47,12 +47,12 @@ const UserDetails = () => {
         <h2 className={styles.heading}>User Details</h2>
 
         <div className={styles.details}>
-          <p><strong>ID:</strong> {userDetails.id}</p>
-          <p><strong>Username:</strong> {userDetails.name}</p>
-          <p><strong>Email:</strong> {userDetails.email}</p>
-          <p><strong>Created At:</strong> {new Date(userDetails.created_at).toLocaleDateString()}</p>
-          <p><strong>Updated At:</strong> {new Date(userDetails.updated_at).toLocaleDateString()}</p>
-          <p><strong>Email Verified At:</strong> {userDetails.email_verified_at ? new Date(userDetails.email_verified_at).toLocaleDateString() : 'Not Verified'}</p>
+          <p><strong>ID:</strong> {userDetails?.id}</p>
+          <p><strong>Username:</strong> {userDetails?.name}</p>
+          <p><strong>Email:</strong> {userDetails?.email}</p>
+          <p><strong>Created At:</strong> {new Date(userDetails?.created_at).toLocaleDateString()}</p>
+          <p><strong>Updated At:</strong> {new Date(userDetails?.updated_at).toLocaleDateString()}</p>
+          <p><strong>Email Verified At:</strong> {new Date(userDetails?.email_verified_at).toLocaleDateString()}</p>
         </div>
 
         <button
@@ -65,7 +65,7 @@ const UserDetails = () => {
         ) : (
           'Logout'
         )}
-          
+
         </button>
       </div>
     </div>
