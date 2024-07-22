@@ -1,7 +1,8 @@
 import { Navigate } from 'react-router-dom';
 import { getCurrentUser } from '../services/authService';
+import  UserDetails  from '../components/UserDetails';
 
-const PrivateRoute = ({ element, ...rest }) => {
+const PrivateRoute = () => {
     const user = getCurrentUser();
   
     if (!user) {
@@ -9,7 +10,7 @@ const PrivateRoute = ({ element, ...rest }) => {
       return <Navigate to="/" />;
     }
   
-    return element;
+    return UserDetails();
   };
 
 export default PrivateRoute;
