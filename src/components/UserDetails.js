@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { logout, getDetails } from '../services/authService';
 import { useNavigate } from 'react-router-dom';
 import { styles } from '../styles';
-import { toast } from 'react-hot-toast';
+import { successToast } from '../services/toastService';
 
 const UserDetails = () => {
   const [userDetails, setUserDetails] = useState(null);
@@ -30,11 +30,8 @@ const UserDetails = () => {
     setLoading(true);
     try {
       const response = await logout();
-      toast.success(response.message, {
-        style: styles.toast
-      });
+      successToast(response.message);
       navigate('/');
-      
     } catch (error) {
       console.error('Failed to logout', error);
     }

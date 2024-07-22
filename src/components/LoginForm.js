@@ -2,7 +2,8 @@ import React, { useState, useCallback } from 'react';
 import { login } from '../services/authService';
 import { useNavigate } from 'react-router-dom';
 import { styles } from '../styles';
-import { toast } from 'react-hot-toast';
+import { successToast } from '../services/toastService';
+
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -15,9 +16,7 @@ const LoginForm = () => {
     setLoading(true);
     try {
       const response =  await login(email, password);
-      toast.success("Welcome "+ response.data.user.name, {
-        style: styles.toast
-      });
+      successToast(response.data.user.name);
       navigate('/user-details');
     } catch (error) {
       console.error('Failed to login', error);
